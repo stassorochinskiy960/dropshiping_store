@@ -150,7 +150,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="/" class="nav-item nav-link active">Home</a>
-                            <a href="" class="nav-item nav-link">Shop</a>
+                            <a href="{% url 'shop' %}" class="nav-item nav-link">Shop</a>
                             <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
@@ -160,12 +160,23 @@
                                 </div>
                             </div>
                             <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
-                            <a href="" class="nav-item nav-link">Admin</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Log in</a>
-                            <a href="" class="nav-item nav-link">Register</a>
-                            <a href="" class="nav-item nav-link">Log out</a>
+                            <a href="{% url 'login' %}" class="nav-item nav-link">
+                                {% if user.is_authenticated %}
+                                    Username: {{ user.username }}
+                                {% else %}
+                                    Log in
+                                {% endif %}
+                            </a>
+                            <a href="{% url 'register' %}" class="nav-item nav-link">
+                            {% if user.is_authenticated %}
+
+                            {% else %}
+                                Register
+                            {% endif %}
+                            </a>
+                            <a href="{% url 'logout' %}" class="nav-item nav-link">Log out</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
