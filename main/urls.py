@@ -25,9 +25,3 @@ urlpatterns = [
     path('authentication/', include('authentication.urls')),
     path('shop/', include('shop.urls')),
 ]
-
-"""
-path('shop/', views.shop, name='shop'),    
-path('login/', views.login, name='login'),
-path('register/', views.register, name='register'),
-"""
