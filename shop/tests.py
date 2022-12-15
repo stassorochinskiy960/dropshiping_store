@@ -6,7 +6,7 @@ from shop.models import Product, Payment, OrderItem, Order
 
 class TestDataBase(TestCase):
     fixtures = [
-        "shop/fixtures/dump.json"
+        "shop/fixtures/mydata.json"
     ]
 
     def setUp(self):
