@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # --- my apps ---
     'authentication',
     'shop',
+    'store',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,10 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+URL_SCRAPING = 'https://www.anilibria.tv/release/urusei-yatsura.html'
+URL_SCRAPING_DOMAIN = ''
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
